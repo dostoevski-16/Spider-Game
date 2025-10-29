@@ -1,22 +1,24 @@
-# Spider-game (Canvas)
+# 🕷️ Spider-Game
 
-A minimal web-based Spider game skeleton:
-- Canvas + delta-time loop (frame-rate independent).
-- Input manager (chống kẹt phím khi mất focus).
-- Demo draw: spider icon + card stacks + easing chuyển động.
+Mini game HTML5 Canvas: điều khiển **nhện** bắn tơ để **bắt ruồi** trong 60 giây, tránh **bọ cánh cứng**. Chạy thuần `HTML/CSS/JS`, **không cần build**. Sẵn sàng triển khai trên **GitHub Pages**.
 
-## Quick Start
-- Open `index.html` in a browser, or host via GitHub Pages.
-- Arrow keys để di chuyển "spider" (demo).
-- Space/Enter là phím mẫu (chưa gán logic).
+## Cách chơi
+- Di chuyển: `← ↑ → ↓` hoặc `W A S D`
+- Bắn tơ: `Space`
+- Di động: joystick ảo + nút 🕸️
+- Bắt ruồi để +1 điểm. Dính bọ → trừ **5 giây**.
 
-## Discussions (Q&A)
-Bật **Settings → General → Features → Discussions** và tạo category **Q&A**.
-Dùng các Q&A mẫu trong phần Achievements để lấy **Galaxy Brain**.
+## Chạy cục bộ
+Mở `index.html` bằng trình duyệt là chơi được.
 
-## Achievements gợi ý
-- Pair Extraordinaire: tạo commit có trailer `Co-authored-by: ...`.
-- Galaxy Brain: 2 câu trả lời được **Mark as answer**.
+## Triển khai GitHub Pages
+1. Tạo repo mới, ví dụ: `spider-game`.
+2. Upload toàn bộ file/folder ở đây vào nhánh `main`.
+3. (Tuỳ chọn) Dùng workflow trong `.github/workflows/deploy.yml` hoặc bật **Settings → Pages → Source: GitHub Actions**.
+4. Sau khi chạy xong, site sẽ có link dạng:
+   - `https://<username>.github.io/spider-game/` (project page).
 
-## License
-MIT
+> Không có bước build — chỉ là static files.
+
+## Giấy phép
+[MIT](./LICENSE)
