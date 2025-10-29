@@ -1,29 +1,61 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Spider-game</title>
-  <style>
-    html, body { height: 100%; margin: 0; background: #0f1220; color: #eaeefb; font-family: system-ui, Arial, sans-serif; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 16px; }
-    canvas { width: 100%; height: 480px; display: block; background: #18203a; border-radius: 12px; }
-    .hint { opacity: 0.8; font-size: 14px; margin-top: 8px; }
-    .title { margin: 0 0 12px; }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <h1 class="title">Spider-game (demo)</h1>
-    <canvas id="game" width="960" height="480"></canvas>
-    <div class="hint">
-      Arrow keys để di chuyển spider • Click vào canvas để focus • Tự do sửa mã nguồn trong <code>src/</code>
-    </div>
-  </div>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spider-Game 🕷️</title>
+    <meta name="description" content="Mini game: điều khiển nhện bắt ruồi, chạy được trên GitHub Pages." />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>🕷️ Spider-Game</h1>
+      <div class="controls">
+        <button id="btn-start" class="btn">Bắt đầu</button>
+        <button id="btn-pause" class="btn">Tạm dừng</button>
+        <button id="btn-reset" class="btn btn-ghost">Chơi lại</button>
+      </div>
+    </header>
 
-  <script type="module">
-    import { boot } from './src/main.js';
-    boot(document.getElementById('game'));
-  </script>
-</body>
+    <main class="layout">
+      <section class="hud">
+        <div class="stat">Điểm: <span id="score">0</span></div>
+        <div class="stat">Thời gian: <span id="time">60.0</span>s</div>
+        <div class="stat">Kỷ lục: <span id="hiscore">0</span></div>
+        <div class="help">
+          <details>
+            <summary>Cách chơi</summary>
+            <ul>
+              <li>Di chuyển: ← ↑ → ↓ hoặc WASD</li>
+              <li>Bắn tơ (bắt ruồi): Space / Phím cách</li>
+              <li>Trên di động: dùng joystick ảo + nút 🕸️</li>
+            </ul>
+          </details>
+        </div>
+      </section>
+
+      <section class="stage-wrap">
+        <canvas id="game" width="960" height="540"></canvas>
+
+        <!-- Joystick & fire (mobile) -->
+        <div class="mobile-ui">
+          <div id="joystick" class="joystick">
+            <div class="stick"></div>
+          </div>
+          <button id="btn-web" class="btn fire">🕸️</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub Pages-ready</a> •
+      Mã nguồn MIT • Không cần build
+    </footer>
+
+    <script src="./src/utils.js"></script>
+    <script src="./src/entities.js"></script>
+    <script src="./src/engine.js"></script>
+    <script src="./src/audio.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
 </html>
